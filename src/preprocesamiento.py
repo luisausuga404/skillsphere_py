@@ -20,3 +20,11 @@ def estandarizar_texto(df, columnas_texto):
         df[columna] = df[columna].str.lower().str.strip()
     print(f"Texto estandarizado en columnas: {columnas_texto}")
     return df
+
+
+def limpiar_duracion(df):
+    # Si la columna duracion_horas tiene valores vacíos, los rellena con 0
+    df["duracion_horas"] = pd.to_numeric(df["duracion_horas"], errors="coerce")
+    df["duracion_horas"] = df["duracion_horas"].fillna(0)
+    print("Duración limpiada: valores nulos reemplazados por 0")
+    return df
