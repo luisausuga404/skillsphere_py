@@ -19,7 +19,7 @@ df_certificados.to_csv("data/processed/certificados_limpios.csv", index=False)
 print("Datos limpios guardados en data/processed/")
 
 # ── MERGE ────────────────────────────────────────────────────────────────────
-# Unimos los dos CSV por id_estudiante, como hacer un VLOOKUP en Excel
+# Unimos los dos CSV por id_estudiante.
 df_merge = pd.merge(df_certificados, df_estudiantes, on="id_estudiante", how="left")
 print("\nMerge realizado correctamente")
 
